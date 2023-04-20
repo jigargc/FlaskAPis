@@ -1,0 +1,1 @@
+newman run ./tests/post.json -e ./tests/env.json
