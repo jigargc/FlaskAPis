@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 
 from posts import create_post, get_post, delete_post, get_posts, get_post_key
-from users import get_user, create_user, update_user, get_user_username, get_user_key, get_user_id
+from users import get_user, create_user, update_user, get_user_username, get_user_id
 
 app = Flask(__name__)
 
