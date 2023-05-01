@@ -13,7 +13,7 @@
 					"name": "create",
 					"item": [
 						{
-							"name": "test1",
+							"name": "user creation test 1",
 							"event": [
 								{
 									"listen": "test",
@@ -55,7 +55,7 @@
 							"response": []
 						},
 						{
-							"name": "test2",
+							"name": "user creation test 2",
 							"event": [
 								{
 									"listen": "test",
@@ -95,7 +95,7 @@
 							"response": []
 						},
 						{
-							"name": "test3",
+							"name": "user creation test 3",
 							"event": [
 								{
 									"listen": "test",
@@ -135,7 +135,7 @@
 							"response": []
 						},
 						{
-							"name": "test4",
+							"name": "user creation test 4",
 							"event": [
 								{
 									"listen": "test",
@@ -175,7 +175,7 @@
 							"response": []
 						},
 						{
-							"name": "test5",
+							"name": "user creation test 5",
 							"event": [
 								{
 									"listen": "test",
@@ -216,7 +216,7 @@
 							"response": []
 						},
 						{
-							"name": "test6",
+							"name": "user creation test 6",
 							"event": [
 								{
 									"listen": "test",
@@ -262,7 +262,7 @@
 					"name": "update",
 					"item": [
 						{
-							"name": "test1",
+							"name": "user update test 1",
 							"event": [
 								{
 									"listen": "test",
@@ -303,7 +303,7 @@
 							"response": []
 						},
 						{
-							"name": "test2",
+							"name": "user update test 2",
 							"event": [
 								{
 									"listen": "test",
@@ -352,10 +352,10 @@
 			"name": "posts",
 			"item": [
 				{
-					"name": "create",
+					"name": "crud",
 					"item": [
 						{
-							"name": "test1",
+							"name": "post creation test 1",
 							"event": [
 								{
 									"listen": "test",
@@ -399,7 +399,7 @@
 							"response": []
 						},
 						{
-							"name": "test2",
+							"name": "post creation test 2",
 							"event": [
 								{
 									"listen": "test",
@@ -440,7 +440,7 @@
 							"response": []
 						},
 						{
-							"name": "test3",
+							"name": "post creation test 3",
 							"event": [
 								{
 									"listen": "test",
@@ -481,7 +481,7 @@
 							"response": []
 						},
 						{
-							"name": "test4",
+							"name": "post creation test 4",
 							"event": [
 								{
 									"listen": "test",
@@ -522,7 +522,7 @@
 							"response": []
 						},
 						{
-							"name": "test5",
+							"name": "post creation test 5",
 							"event": [
 								{
 									"listen": "test",
@@ -563,7 +563,7 @@
 							"response": []
 						},
 						{
-							"name": "test6",
+							"name": "post creation test 6",
 							"event": [
 								{
 									"listen": "test",
@@ -606,7 +606,7 @@
 							"response": []
 						},
 						{
-							"name": "test7",
+							"name": "post get test 1",
 							"event": [
 								{
 									"listen": "test",
@@ -652,7 +652,7 @@
 							"response": []
 						},
 						{
-							"name": "test8",
+							"name": "post get test 2",
 							"event": [
 								{
 									"listen": "test",
@@ -697,7 +697,7 @@
 							"response": []
 						},
 						{
-							"name": "test9",
+							"name": "post deletion 1",
 							"event": [
 								{
 									"listen": "test",
@@ -739,7 +739,7 @@
 							"response": []
 						},
 						{
-							"name": "test10",
+							"name": "post creation test 7",
 							"event": [
 								{
 									"listen": "test",
@@ -784,7 +784,7 @@
 							"response": []
 						},
 						{
-							"name": "test11",
+							"name": "post deletion 2",
 							"event": [
 								{
 									"listen": "test",
@@ -826,7 +826,7 @@
 							"response": []
 						},
 						{
-							"name": "test12",
+							"name": "post deletion 3",
 							"event": [
 								{
 									"listen": "test",
@@ -868,7 +868,7 @@
 							"response": []
 						},
 						{
-							"name": "test14",
+							"name": "post get test 3",
 							"event": [
 								{
 									"listen": "test",
@@ -1140,7 +1140,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Successful Post Creation\", function () {",
+											"pm.test(\"Successful Post Creation for user 2\", function () {",
 											"    pm.response.to.have.status(200);",
 											"    pm.expect(pm.response.json()).to.have.property(\"id\")",
 											"    pm.expect(pm.response.json()).to.have.property(\"key\");",
@@ -1184,7 +1184,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Successful Post Creation\", function () {",
+											"pm.test(\"Successful Post Creation for user 2\", function () {",
 											"    pm.response.to.have.status(200);",
 											"    pm.expect(pm.response.json()).to.have.property(\"id\")",
 											"    pm.expect(pm.response.json()).to.have.property(\"key\");",
@@ -1272,8 +1272,9 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Post Retrieval for user 1\", function () {",
+											"pm.test(\"Text search \", function () {",
 											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
 											"});",
 											"",
 											""
@@ -1307,6 +1308,106 @@
 										{
 											"key": "text",
 											"value": "wonder"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "textSearch Empty Patameters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Full text search for empty text\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{_url}}/posts/fullTextSearch",
+									"host": [
+										"{{_url}}"
+									],
+									"path": [
+										"posts",
+										"fullTextSearch"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wonder",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "textSearch No result",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Text search no result\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{_url}}/posts/fullTextSearch",
+									"host": [
+										"{{_url}}"
+									],
+									"path": [
+										"posts",
+										"fullTextSearch"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wonder",
+											"disabled": true
 										}
 									]
 								}
@@ -1415,6 +1516,157 @@
 										{
 											"key": "end",
 											"value": "{{end_t1}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "timestamp with Only start",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Post Retrieval for timestamp where only start is given\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{_url}}/posts/dateRange/?start={{start_t1}}",
+									"host": [
+										"{{_url}}"
+									],
+									"path": [
+										"posts",
+										"dateRange",
+										""
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "{{start_t1}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "timestamp with Only end",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Post Retrieval for timestamp where only end is given\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{_url}}/posts/dateRange/?end={{start_t1}}",
+									"host": [
+										"{{_url}}"
+									],
+									"path": [
+										"posts",
+										"dateRange",
+										""
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "{{start_t1}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "timestamp with none of start and end",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Post Retrieval for timestamp where none of start and end is given\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.expect(pm.response.json().length).to.be.greaterThan(0);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{_url}}/posts/dateRange/",
+									"host": [
+										"{{_url}}"
+									],
+									"path": [
+										"posts",
+										"dateRange",
+										""
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "{{start_t1}}",
+											"disabled": true
 										}
 									]
 								}

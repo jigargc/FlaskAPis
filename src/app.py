@@ -104,7 +104,6 @@ def get_user_posts_controller(user_id):
             posts.append(post)
     return jsonify(posts)
 
-
 @app.route("/posts/fullTextSearch/", methods=["GET"])
 def get_posts_full_text_search_controller():
     text = request.args.get('text')
