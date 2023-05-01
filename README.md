@@ -48,6 +48,7 @@ N/A
     - We implemented date- and time-based range queries to allow users to view posts in a specific date and time range.
     - To view posts in a specific time range, use "GET /posts/dateRange/?start={{start}}&end={{end}}"
     - If start date and end date are not provided, the application will return all posts.
+    - start and end date should be in the format of ISO 8601.
    
 4. **Extension 4: User-based range queries** 
     - We implemented user-based range queries to allow users to view posts by a specific user.
