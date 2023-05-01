@@ -5,6 +5,7 @@ from users import get_user, create_user, update_user, get_user_username, get_use
 
 app = Flask(__name__)
 
+
 @app.route("/post", methods=["POST"])
 def create_posts_controller():
     try:
@@ -116,8 +117,6 @@ def get_posts_full_text_search_controller(text):
     return jsonify(posts)
 
 
-
-
 @app.route("/posts/dateRange/", methods=["GET"])
 def get_posts_date_range_controller():
     start_datetime_str = request.args.get('start')
@@ -133,5 +132,5 @@ def get_posts_date_range_controller():
     return jsonify(posts)
 
 
-
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)

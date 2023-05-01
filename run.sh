@@ -1,4 +1,2 @@
 #!/bin/sh
-#export FLASK_DEBUG=1
-#export FLASK_APP=./src/app.py
-exec flask run
+exec python3 -m flask run
