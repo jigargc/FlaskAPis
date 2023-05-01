@@ -116,6 +116,9 @@ def get_posts_full_text_search_controller(text):
         post['user'] = get_user(post['user_id'])
     return jsonify(posts)
 
+
+
+
 @app.route("/posts/dateRange/", methods=["GET"])
 def get_posts_date_range_controller():
     start_datetime_str = request.args.get('start')
@@ -129,3 +132,4 @@ def get_posts_date_range_controller():
     for post in posts:
         post['user'] = get_user(post['user_id'])
     return jsonify(posts)
+

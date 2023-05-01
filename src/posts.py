@@ -27,7 +27,6 @@ def get_post_key(key):
             return post
     return None
 
-
 def create_post(msg, user_id):
     with lock:
         new_post = {
