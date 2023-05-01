@@ -310,8 +310,8 @@
 									"script": {
 										"exec": [
 											"pm.test(\"Update user - User not found\", function () {",
-											"    pm.response.to.have.status(400);",
-											"    pm.expect(pm.response.json().error).to.eql(\"User not found\");",
+											"    pm.response.to.have.status(404);",
+											"    pm.expect(pm.response.json().error).to.eql(\"user not found\");",
 											"});",
 											""
 										],
@@ -1295,14 +1295,19 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{_url}}/posts/fullTextSearch/wonder",
+									"raw": "{{_url}}/posts/fullTextSearch?text=wonder",
 									"host": [
 										"{{_url}}"
 									],
 									"path": [
 										"posts",
-										"fullTextSearch",
-										"wonder"
+										"fullTextSearch"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wonder"
+										}
 									]
 								}
 							},

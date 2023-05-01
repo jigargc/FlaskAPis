@@ -85,14 +85,13 @@ def update_user_controller(user_id):
             raise Exception("name must be a string")
         if len(name) == 0:
             raise Exception("Empty string found")
-        user = get_user_id(user_id)
-        if not user:
-            raise Exception("User not found")
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+    user = get_user_id(user_id)
+    if not user:
+        return jsonify({"error": "user not found"}), 404
     update_user(user['username'], name)
     return "User updated", 200
-
 
 @app.route("/user/posts/<int:user_id>", methods=["GET"])
 def get_user_posts_controller(user_id):
@@ -106,11 +105,14 @@ def get_user_posts_controller(user_id):
     return jsonify(posts)
 
 
-@app.route("/posts/fullTextSearch/<string:text>", methods=["GET"])
-def get_posts_full_text_search_controller(text):
+@app.route("/posts/fullTextSearch/", methods=["GET"])
+def get_posts_full_text_search_controller():
+    text = request.args.get('text')
     posts = []
     for post in get_posts():
-        if text.lower() in post['msg'].lower():
+        if not text:
+            posts.append(post)
+        elif text.lower() in post['msg'].lower():
             posts.append(post)
     for post in posts:
         post['user'] = get_user(post['user_id'])
@@ -121,12 +123,21 @@ def get_posts_full_text_search_controller(text):
 def get_posts_date_range_controller():
     start_datetime_str = request.args.get('start')
     end_datetime_str = request.args.get('end')
-    if not start_datetime_str or not end_datetime_str:
-        return "start or end not found", 404
+
     posts = []
+
     for post in get_posts():
-        if start_datetime_str <= post['timestamp'] <= end_datetime_str:
+        if not start_datetime_str or not end_datetime_str:
             posts.append(post)
+        elif start_datetime_str and not end_datetime_str:
+            if start_datetime_str <= post['timestamp']:
+                posts.append(post)
+        elif not start_datetime_str and end_datetime_str:
+            if post['timestamp'] <= end_datetime_str:
+                posts.append(post)
+        elif start_datetime_str and end_datetime_str:
+            if start_datetime_str <= post['timestamp'] <= end_datetime_str:
+                posts.append(post)
     for post in posts:
         post['user'] = get_user(post['user_id'])
     return jsonify(posts)
