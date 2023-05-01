@@ -1,2 +1,2 @@
 #!/bin/sh
-newman run ./tests/tests.json -e ./tests/env.json
+newman run ./tests.json -e ./env.json
