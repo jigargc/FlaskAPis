@@ -5,7 +5,6 @@ from users import get_user, create_user, update_user, get_user_username, get_use
 
 app = Flask(__name__)
 
-
 @app.route("/post", methods=["POST"])
 def create_posts_controller():
     try:
@@ -133,3 +132,6 @@ def get_posts_date_range_controller():
         post['user'] = get_user(post['user_id'])
     return jsonify(posts)
 
+
+
+app.run()
