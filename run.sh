@@ -1,1 +1,3 @@
-exec python3 -m flask run
+#!/bin/sh
+
+exec flask run

@@ -1,3 +1,2 @@
 #!/bin/sh
-pip3 install -r requirements.txt
-exit 0
+pip3 install flask
