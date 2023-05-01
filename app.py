@@ -133,4 +133,4 @@ def get_posts_date_range_controller():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
